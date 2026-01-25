@@ -1,27 +1,26 @@
-📊 E-Commerce ETL Pipeline & Sales Analytics
-📌 Project Overview
+# 📊 E-Commerce ETL Pipeline & Sales Analytics
 
-This project demonstrates an end-to-end Data Analytics solution starting from unstructured JSON data through Python ETL processing, data modeling, and Power BI analytics.
+## 📌 Project Overview
+This project demonstrates an **end-to-end Data Analytics solution** starting from **unstructured JSON data** through **Python ETL processing**, **data modeling**, and **Power BI analytics**.
 
-The objective is to transform raw e-commerce sales and forecast data into clean, analytics-ready datasets and provide business insights such as sales trends, year-over-year comparison, top products, customer behavior, and forecast vs actual analysis.
+The goal is to transform raw e-commerce sales and forecast data into **clean, analytics-ready datasets** and provide **actionable business insights**.
 
-🧠 Business Objectives
+---
 
-The solution answers the following business questions:
+## 🧠 Business Objectives
+This solution answers the following business questions:
 
-What is the total sales performance at different granularities (year, month, product, geography)?
+- Analyze **total sales performance** across different granularities (year, month, product, geography)
+- Compare **sales in 2009 vs 2008**
+- Identify **Top 10 products** and their share of total sales
+- Compare **forecasted vs actual sales**
+- Analyze **top customer behavior** and purchasing patterns
+- Enable filtering by **Country and State** for sales teams
 
-How do sales in 2009 compare to 2008?
+---
 
-Which are the Top 10 products and their contribution to total sales?
+## 🏗️ Architecture Overview
 
-How does forecasted sales compare to actual sales?
-
-Who is the top customer, and how do their purchases behave over time?
-
-Enable the sales team to filter insights by Country and State.
-
-🏗️ Architecture Overview
 Raw JSON Data
      ↓
 Python ETL (Extract – Transform – Load)
