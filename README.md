@@ -55,178 +55,77 @@ E-Commerce-ETL-Pipeline/
 └── README.md
 
 🔄 ETL Process (Python)
-1️⃣ Extract
 
-Loaded raw JSON files using Python
+---
 
-Handled column-oriented JSON structure in sales data
+## ETL Process
 
-Read forecast data stored as a list of JSON objects
+### Extract
+- Loaded raw sales and forecast data from JSON files
+- Handled unstructured and column-oriented JSON formats
 
-2️⃣ Transform
+### Transform
+- Converted raw JSON into structured DataFrames
+- Cleaned column names and standardized data types
+- Converted dates and numeric values
+- Created a reusable Date dimension
+- Prepared data for analytical modeling
 
-Converted unstructured JSON into row-based DataFrames
+### Load
+- Exported clean data into CSV files
+- Data is ready for Power BI or database ingestion
 
-Cleaned column names and removed unnecessary whitespace
+---
 
-Converted data types:
+## Data Model
+A **Star Schema** was implemented to ensure:
+- Accurate aggregations
+- High performance queries
+- Simplified DAX calculations
+- Dynamic filtering by geography and time
 
-Dates → datetime
+---
 
-Numeric values → float / int
+## Power BI Analytics
 
-Handled missing or invalid values
+### Key Metrics & Insights
+- Total Sales ($)
+- Sales comparison between 2008 and 2009
+- Year-over-Year growth
+- Top 10 products and percentage contribution
+- Forecast vs actual sales
+- Top customer purchasing behavior
 
-Created a Date Dimension for analytical slicing
+### Filtering
+- Country
+- State
+- Year
 
-3️⃣ Load
+---
 
-Exported cleaned data into CSV files
+## Technologies Used
+- Python (Pandas, JSON)
+- Power BI
+- DAX
+- Data Modeling (Star Schema)
+- Git & GitHub
 
-Data is ready for Power BI or relational databases
+---
 
-🧾 Output Tables
-📌 Fact Tables
+## Skills Demonstrated
+- ETL development using Python
+- Data cleaning and transformation
+- Analytical data modeling
+- Business-focused reporting
+- Data visualization with Power BI
 
-fact_sales
+---
 
-SalesAmount
+## Conclusion
+This project reflects a real-world data analytics workflow, from handling unstructured data to delivering actionable insights for business stakeholders.
 
-OrderQuantity
+---
 
-OrderDate
-
-ProductKey
-
-CustomerKey
-
-Geography attributes
-
-fact_forecast
-
-CountryRegion
-
-Brand
-
-Year
-
-Forecast Amount
-
-📌 Dimension Tables
-
-dim_date
-
-Date
-
-Year
-
-Month
-
-Month Name
-
-⭐ Data Modeling
-
-A Star Schema is used to ensure:
-
-High performance
-
-Clean relationships
-
-Accurate aggregations
-
-Easy filtering by geography and time
-
-Shared Date Dimension enables comparison between:
-
-Actual Sales
-
-Forecasted Sales
-
-📊 Power BI Analytics & Measures
-🔹 Key DAX Measures
-Total Sales ($) :=
-SUM ( FactSales[SalesAmount] )
-
-Sales 2008 :=
-CALCULATE ( [Total Sales ($)], DimDate[Year] = 2008 )
-
-Sales 2009 :=
-CALCULATE ( [Total Sales ($)], DimDate[Year] = 2009 )
-
-YoY Growth % :=
-DIVIDE ( [Sales 2009] - [Sales 2008], [Sales 2008] )
-
-Total Forecast :=
-SUM ( FactForecast[Forecast] )
-
-% of Total Sales :=
-DIVIDE (
-    [Total Sales ($)],
-    CALCULATE ( [Total Sales ($)], ALL ( DimProduct ) )
-)
-
-📈 Dashboard Features
-
-Total Sales KPIs
-
-Sales Trend over Time
-
-Sales 2008 vs 2009 Comparison
-
-Top 10 Products & % Contribution
-
-Forecast vs Actual Comparison
-
-Top Customer Purchase Behavior
-
-Dynamic filtering by:
-
-Country
-
-State
-
-Year
-
-📌 Single-page dashboard designed for business users.
-
-🛠️ Technologies Used
-
-Python (Pandas, JSON)
-
-Power BI
-
-DAX
-
-Data Modeling (Star Schema)
-
-GitHub
-
-🎯 Key Skills Demonstrated
-
-ETL Development
-
-Data Cleaning & Transformation
-
-Analytical Thinking
-
-Data Modeling
-
-DAX & Power BI
-
-Business-oriented reporting
-
-📌 Conclusion
-
-This project simulates a real-world analytics workflow, handling unstructured data and transforming it into meaningful insights for decision-makers. It highlights strong foundations in data engineering, analytics, and visualization.
-
-If you want, next I can:
-
-🔹 Customize this README specifically for Orion Digital Solutions
-
-🔹 Shorten it for recruiter scanning
-
-🔹 Review your repo structure & naming
-
-🔹 Help you write a LinkedIn post linking this project
-
-Just tell me 🚀
+## Author
+Ahmed Essam  
+GitHub: https://github.com/ahmedd3sam
